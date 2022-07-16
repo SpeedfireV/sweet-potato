@@ -14,7 +14,7 @@
 [ext_resource path="res://dialog.tscn" type="PackedScene" id=12]
 [ext_resource path="res://left_chair.png" type="Texture" id=13]
 [ext_resource path="res://right_chair.png" type="Texture" id=14]
-[ext_resource path="res://canteen.png" type="Texture" id=15]
+[ext_resource path="res://New Piskel(11).png" type="Texture" id=15]
 
 [sub_resource type="TileSet" id=4]
 1/name = "Floor32.png 1"
@@ -366,9 +366,10 @@ texture = ExtResource( 13 )
 offset = Vector2( 0, 31 )
 
 [node name="Canteen" type="Sprite" parent="Node2D/YSort"]
-position = Vector2( 15, 167 )
+position = Vector2( 17, 167 )
+scale = Vector2( 0.0920172, 0.0920172 )
 texture = ExtResource( 15 )
-offset = Vector2( 0, 9 )
+offset = Vector2( 0, 90 )
 
 [node name="StaticBody2D" parent="Node2D" instance=ExtResource( 6 )]
 
