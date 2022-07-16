@@ -4,9 +4,6 @@ const UP_DIRECTION = Vector2.UP
 
 export var speed := 100.0
 
-export var jump_strength := 1500.0
-export var maximum_jumps := 2
-
 var _velocity := Vector2.ZERO
 
 func _physics_process(delta: float) -> void:
