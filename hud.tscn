@@ -17,7 +17,6 @@ shadow_offset = Vector2( 1, 1 )
 [node name="CanvasLayer" type="CanvasLayer"]
 
 [node name="Control" type="Control" parent="."]
-visible = false
 margin_left = 264.0
 margin_top = 2.0
 margin_right = 318.0
