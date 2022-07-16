@@ -1,50 +1,53 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://fonts/Daydream.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Label.gd" type="Script" id=2]
 [ext_resource path="res://coin.png" type="Texture" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.745098, 0.333333, 0.0352941, 1 )
+bg_color = Color( 0.745098, 0.333333, 0.0352941, 0.862745 )
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="DynamicFont" id=2]
+size = 10
 extra_spacing_top = 5
 font_data = ExtResource( 1 )
 
-[sub_resource type="ImageTexture" id=3]
-
 [node name="CanvasLayer" type="CanvasLayer"]
 
-[node name="Panel" type="Panel" parent="."]
-margin_left = 1.0
-margin_top = 1.0
-margin_right = 89.0
-margin_bottom = 33.0
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Control"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 54.0
+margin_bottom = 21.0
 custom_styles/panel = SubResource( 1 )
 
-[node name="Label" type="Label" parent="."]
-margin_left = 31.0
-margin_top = 1.0
-margin_right = 87.0
-margin_bottom = 33.0
+[node name="Label" type="Label" parent="Control"]
+margin_left = 19.0
+margin_top = -1.0
+margin_right = 54.0
+margin_bottom = 20.0
 custom_colors/font_color = Color( 1, 0.984314, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "200"
 align = 1
+valign = 1
 script = ExtResource( 2 )
 
-[node name="Coin" type="Sprite" parent="."]
-position = Vector2( 18, 17 )
-scale = Vector2( 0.0695876, 0.0695876 )
+[node name="TextureRect" type="TextureRect" parent="Control"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 393.0
+margin_bottom = 393.0
+rect_scale = Vector2( 0.035, 0.035 )
+size_flags_stretch_ratio = 0.17
 texture = ExtResource( 3 )
-
-[node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -80.0
-margin_right = -40.0
-margin_bottom = 40.0
-texture = SubResource( 3 )
+flip_h = true

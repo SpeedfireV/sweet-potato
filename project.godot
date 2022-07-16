@@ -13,6 +13,10 @@ config_version=4
 config/name="Sweet-potato"
 run/main_scene="res://banana.tscn"
 
+[autoload]
+
+Global="*res://GlobalVariables.gd"
+
 [display]
 
 window/size/width=320

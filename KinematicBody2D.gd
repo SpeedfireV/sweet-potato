@@ -5,7 +5,6 @@ const UP_DIRECTION = Vector2.UP
 export var speed := 100.0
 
 var _velocity := Vector2.ZERO
-export var _abc := 15
 
 func _physics_process(delta: float) -> void:
 	var _horizontal_direction = (
