@@ -136,7 +136,7 @@ tile_data = PoolIntArray( 65533, 1, 0, 65534, 1, 0, 65535, 1, 0, 0, 1, 0, 1, 1, 
 position = Vector2( 92, 41 )
 script = ExtResource( 2 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
+[node name="MovementLeft" type="AnimationPlayer" parent="KinematicBody2D"]
 root_node = NodePath("../Body")
 anims/RESET = SubResource( 2 )
 anims/movement = SubResource( 3 )
