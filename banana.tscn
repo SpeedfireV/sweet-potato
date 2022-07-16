@@ -181,7 +181,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10, 13 )
+extents = Vector2( 10, 4.5 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 15.75, 192 )
@@ -231,7 +231,7 @@ current = true
 zoom = Vector2( 0.9, 0.9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/YSort/KinematicBody2D"]
-position = Vector2( -10.8099, 15 )
+position = Vector2( -10.8099, 22.5 )
 shape = SubResource( 1 )
 
 [node name="Body" type="Sprite" parent="Node2D/YSort/KinematicBody2D"]
