@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/New Piskel(9).png-4359fc6b0feeb4dcfd71e9a410fa42fe.stex"
+path="res://.import/Kitchen floor.png-828508fed350e1e45aef3dd9ad175157.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://New Piskel(9).png"
-dest_files=[ "res://.import/New Piskel(9).png-4359fc6b0feeb4dcfd71e9a410fa42fe.stex" ]
+source_file="res://Kitchen floor.png"
+dest_files=[ "res://.import/Kitchen floor.png-828508fed350e1e45aef3dd9ad175157.stex" ]
 
 [params]
 
