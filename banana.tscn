@@ -5,17 +5,17 @@
 [ext_resource path="res://pictures/left_shoe.png" type="Texture" id=3]
 [ext_resource path="res://pictures/banana.png" type="Texture" id=4]
 [ext_resource path="res://grass.png" type="Texture" id=5]
-[ext_resource path="res://pictures/floor_512.png" type="Texture" id=6]
+[ext_resource path="res://pictures/Floor32.png" type="Texture" id=6]
 
 [sub_resource type="TileSet" id=5]
-0/name = "floor_512.png 0"
+0/name = "Floor32.png 0"
 0/texture = ExtResource( 6 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 512, 512 )
 0/tile_mode = 2
 0/autotile/icon_coordinate = Vector2( 0, 0 )
-0/autotile/tile_size = Vector2( 512, 512 )
+0/autotile/tile_size = Vector2( 32, 32 )
 0/autotile/spacing = 0
 0/autotile/occluder_map = [  ]
 0/autotile/navpoly_map = [  ]
@@ -119,10 +119,7 @@ extents = Vector2( 25, 49 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 5 )
-cell_size = Vector2( 16, 16 )
-cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
-tile_data = PoolIntArray( -131058, 0, 0 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 position = Vector2( 92, 41 )
