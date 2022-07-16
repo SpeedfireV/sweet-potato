@@ -284,82 +284,82 @@ texture = ExtResource( 10 )
 offset = Vector2( 0, 27 )
 
 [node name="Table6" type="Sprite" parent="Node2D/YSort"]
-position = Vector2( 141.5, 293.469 )
+position = Vector2( 142, 295 )
 scale = Vector2( 0.59375, 0.59375 )
 texture = ExtResource( 10 )
 offset = Vector2( 0, 27 )
 
 [node name="Chair right" type="Sprite" parent="Node2D/YSort"]
-position = Vector2( 158.5, 295.469 )
+position = Vector2( 156, 294 )
 scale = Vector2( 0.59375, 0.59375 )
 texture = ExtResource( 14 )
-offset = Vector2( 0, 27 )
+offset = Vector2( 0, 31 )
 
 [node name="Chair r2" type="Sprite" parent="Node2D/YSort"]
-position = Vector2( -33, 233 )
+position = Vector2( -32.5, 230.625 )
 scale = Vector2( 0.59375, 0.59375 )
 texture = ExtResource( 14 )
-offset = Vector2( 0, 27 )
+offset = Vector2( 0, 31 )
 
 [node name="Chair r3" type="Sprite" parent="Node2D/YSort"]
-position = Vector2( -34.5, 297.469 )
+position = Vector2( -34, 295.094 )
 scale = Vector2( 0.59375, 0.59375 )
 texture = ExtResource( 14 )
-offset = Vector2( 0, 27 )
+offset = Vector2( 0, 31 )
 
 [node name="Chair r4" type="Sprite" parent="Node2D/YSort"]
-position = Vector2( 64, 233 )
+position = Vector2( 64.5, 230.625 )
 scale = Vector2( 0.59375, 0.59375 )
 texture = ExtResource( 14 )
-offset = Vector2( 0, 27 )
+offset = Vector2( 0, 31 )
 
 [node name="Chair r5" type="Sprite" parent="Node2D/YSort"]
-position = Vector2( 155.5, 231.469 )
+position = Vector2( 156, 229.094 )
 scale = Vector2( 0.59375, 0.59375 )
 texture = ExtResource( 14 )
-offset = Vector2( 0, 27 )
+offset = Vector2( 0, 31 )
 
 [node name="Chair r6" type="Sprite" parent="Node2D/YSort"]
-position = Vector2( 62.5, 297.469 )
+position = Vector2( 63, 295.094 )
 scale = Vector2( 0.59375, 0.59375 )
 texture = ExtResource( 14 )
-offset = Vector2( 0, 27 )
+offset = Vector2( 0, 31 )
 
 [node name="Chair" type="Sprite" parent="Node2D/YSort"]
-position = Vector2( 129.5, 296.469 )
+position = Vector2( 129, 296 )
 scale = Vector2( 0.59375, 0.59375 )
 texture = ExtResource( 13 )
-offset = Vector2( 0, 27 )
+offset = Vector2( 0, 31 )
 
 [node name="Chair4" type="Sprite" parent="Node2D/YSort"]
-position = Vector2( 126.5, 233.469 )
+position = Vector2( 127, 231.094 )
 scale = Vector2( 0.59375, 0.59375 )
 texture = ExtResource( 13 )
-offset = Vector2( 0, 27 )
+offset = Vector2( 0, 31 )
 
 [node name="Chair2" type="Sprite" parent="Node2D/YSort"]
-position = Vector2( 31.5, 298.469 )
+position = Vector2( 32, 296.094 )
 scale = Vector2( 0.59375, 0.59375 )
 texture = ExtResource( 13 )
-offset = Vector2( 0, 27 )
+offset = Vector2( 0, 31 )
 
 [node name="Chair3" type="Sprite" parent="Node2D/YSort"]
-position = Vector2( -62.5, 298.469 )
+position = Vector2( -62, 296.094 )
 scale = Vector2( 0.59375, 0.59375 )
 texture = ExtResource( 13 )
-offset = Vector2( 0, 27 )
+offset = Vector2( 0, 31 )
 
 [node name="Chair5" type="Sprite" parent="Node2D/YSort"]
-position = Vector2( -63, 234 )
+position = Vector2( -62.5, 231.625 )
 scale = Vector2( 0.59375, 0.59375 )
 texture = ExtResource( 13 )
-offset = Vector2( 0, 27 )
+offset = Vector2( 0, 31 )
 
 [node name="Chair6" type="Sprite" parent="Node2D/YSort"]
-position = Vector2( 34, 234 )
+position = Vector2( 34.5, 231.625 )
 scale = Vector2( 0.59375, 0.59375 )
 texture = ExtResource( 13 )
-offset = Vector2( 0, 27 )
+offset = Vector2( 0, 31 )
 
 [node name="StaticBody2D" parent="Node2D" instance=ExtResource( 6 )]
 
@@ -390,4 +390,24 @@ shape = SubResource( 11 )
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
 position = Vector2( 48, 251 )
+shape = SubResource( 12 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2( -49, 251 )
+shape = SubResource( 12 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2( -49, 317 )
+shape = SubResource( 12 )
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2( 47, 317 )
+shape = SubResource( 12 )
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2( 142, 315 )
+shape = SubResource( 12 )
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2( 141, 251 )
 shape = SubResource( 12 )
