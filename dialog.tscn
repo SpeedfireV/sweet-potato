@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://arrow.png" type="Texture" id=2]
+[ext_resource path="res://dialog.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.745098, 0.333333, 0.0352941, 0.588235 )
+border_width_left = 4
+border_width_top = 2
+border_width_right = 4
+border_width_bottom = 2
+border_color = Color( 0.521569, 0.243137, 0.054902, 0.588235 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = -86.0
+margin_right = -10.0
+margin_bottom = -10.0
+
+[node name="Background" type="Panel" parent="MarginContainer"]
+visible = false
+margin_right = 300.0
+margin_bottom = 76.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Dialog" type="Label" parent="MarginContainer/Background"]
+visible = false
+margin_left = 5.0
+margin_top = 2.0
+margin_right = 297.0
+margin_bottom = 59.0
+custom_fonts/font = ExtResource( 1 )
+text = "And then he died!!! THAT WAS SO SHOCKING THAT I DIED!!!?!?.. GAEGAEGAGEAGEAGEAGEAGAEGAEGA"
+autowrap = true
+percent_visible = 0.2
+max_lines_visible = 4
+
+[node name="Arrow" type="TextureRect" parent="MarginContainer/Background"]
+visible = false
+margin_left = 138.0
+margin_top = 61.0
+margin_right = 364.0
+margin_bottom = 207.0
+rect_scale = Vector2( 0.06, 0.08 )
+texture = ExtResource( 2 )
+
+[node name="Tween" type="Tween" parent="."]

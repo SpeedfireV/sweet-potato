@@ -223,12 +223,12 @@ position = Vector2( -10.8099, 15 )
 shape = SubResource( 1 )
 
 [node name="Body" type="Sprite" parent="KinematicBody2D"]
-position = Vector2( -11, 16 )
+position = Vector2( -10.8538, 15 )
 scale = Vector2( 0.0584795, 0.0584795 )
 texture = ExtResource( 4 )
 
 [node name="LeftShoe" type="Sprite" parent="KinematicBody2D"]
-position = Vector2( -11, 18 )
+position = Vector2( -11.1755, 17.9708 )
 scale = Vector2( 0.0439453, 0.0439453 )
 texture = ExtResource( 3 )
 
