@@ -5,7 +5,7 @@
 [ext_resource path="res://dialog.gd" type="Script" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.745098, 0.333333, 0.0352941, 0.588235 )
+bg_color = Color( 0.745098, 0.333333, 0.0352941, 1 )
 border_width_left = 4
 border_width_top = 2
 border_width_right = 4
@@ -29,13 +29,11 @@ margin_right = -10.0
 margin_bottom = -10.0
 
 [node name="Background" type="Panel" parent="MarginContainer"]
-visible = false
 margin_right = 300.0
 margin_bottom = 76.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="Dialog" type="Label" parent="MarginContainer/Background"]
-visible = false
 margin_left = 5.0
 margin_top = 2.0
 margin_right = 297.0
@@ -47,7 +45,6 @@ percent_visible = 0.2
 max_lines_visible = 4
 
 [node name="Arrow" type="TextureRect" parent="MarginContainer/Background"]
-visible = false
 margin_left = 138.0
 margin_top = 61.0
 margin_right = 364.0

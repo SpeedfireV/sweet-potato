@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-const CHAR_READ_RATE = 0.08
+const CHAR_READ_RATE = 0.07
 
 onready var background = $MarginContainer/Background
 onready var dialog = $MarginContainer/Background/Dialog
@@ -24,8 +24,6 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept") and current_state == State.FINISHED:
 		change_state()
-		set_dialog_text("NEW DIALOG TEXT!!!")
-		show_dialog()
 	if current_state == State.READY:
 		hide_dialog()
 	elif current_state == State.READING and dialog.visible == false:
