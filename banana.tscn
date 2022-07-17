@@ -103,7 +103,7 @@ extents = Vector2( 8.5, 53.5 )
 
 [sub_resource type="Curve2D" id=24]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 35.6531, 389, 0, 0, 0, 0, 33.8163, 269, 0, 0, 0, 0, 33.2041, 259, 0, 0, 0, 0, 33.8163, 242, 0, 0, 0, 0, 30.7551, 232, 0, 0, 0, 0, 27.0816, 224, 0, 0, 0, 0, 25.2449, 217, 0, 0, 0, 0, 22.1837, 212, 0, 0, 0, 0, 19.7347, 208, 0, 0, 0, 0, 16.6735, 201, 0, 0, 0, 0, 13, 192 )
+"points": PoolVector2Array( 0, 0, 0, 0, 35.6531, 389, 0, 0, 0, 0, 33.8163, 269, 0, 0, 0, 0, 33.2041, 259, 0, 0, 0, 0, 33.8163, 242, 0, 0, 0, 0, 30.7551, 232, 0, 0, 0, 0, 27.0816, 224, 0, 0, 0, 0, 25.2449, 217, 0, 0, 0, 0, 22.1837, 212, 0, 0, 0, 0, 19.7347, 208, 0, 0, 0, 0, 16.6735, 201, 0, 0, 0, 0, 13, 192, 0, 0, 0, 0, -29.16, 204, 0, 0, 0, 0, -34.194, 234 )
 }
 
 [sub_resource type="Animation" id=25]
@@ -459,8 +459,8 @@ position = Vector2( 149.5, 104.5 )
 shape = SubResource( 23 )
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2( -8.23333, 0 )
-scale = Vector2( 1.63333, 1 )
+position = Vector2( -6.6594, 0 )
+scale = Vector2( 1.58918, 1 )
 curve = SubResource( 24 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
@@ -483,8 +483,8 @@ position = Vector2( -10.8099, 22.5 )
 shape = SubResource( 1 )
 
 [node name="Body" type="Sprite" parent="Path2D/PathFollow2D/Area2D"]
-position = Vector2( -10, 15 )
-scale = Vector2( 0.0584795, 0.0584795 )
+position = Vector2( -12.7979, 14.9854 )
+scale = Vector2( 0.0475503, 0.0585366 )
 texture = ExtResource( 4 )
 
 [node name="LeftShoe" type="Sprite" parent="Path2D/PathFollow2D/Area2D"]
