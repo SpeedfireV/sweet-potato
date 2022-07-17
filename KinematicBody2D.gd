@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 const UP_DIRECTION = Vector2.UP
 
-export var speed := 85.0
+export var speed := 90.0
 
 var _velocity := Vector2.ZERO
 
