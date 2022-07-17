@@ -20,6 +20,18 @@ var queue: int = 0
 var hour: String = "10:00"
 var clock_res: String = "res://pictures/clocks/clock10.png"
 
+var blender_left = {
+	"strawberry": 0,
+	"coconut": 0,
+	"lemon": 0,
+}
+
+var blender_right = {
+	"strawberry": 0,
+	"coconut": 0,
+	"lemon": 0,
+}
+
 
 func _ready():
 	pass # Replace with function body.

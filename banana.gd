@@ -9,6 +9,7 @@ onready var coconuts = $YSort/AreaCoconuts
 onready var customer = $YSort/Areacustomer
 onready var blender1 = $YSort/Areablender1
 onready var blender2 = $YSort/Areablender2
+onready var fruit = $Node2D/YSort/Player/Fruit
 
 func _ready():
 	pass
@@ -36,7 +37,19 @@ func _process(delta):
 		notifier.hide_notifier()
 		
 	
-	
+	if Input.is_action_just_pressed("ui_accept"):
+		match true:
+			lemons.active:
+				fruit.texture = load("res://pictures/fruits/lemon.png")
+				fruit.visible = true
+			coconuts.active:
+				fruit.texture = load("res://pictures/fruits/coconut.png")
+				fruit.visible = true
+			strawberries.active:
+				fruit.texture = load("res://pictures/fruits/strawberry.png")
+				fruit.visible = true
+				
+		
 	
 
 
