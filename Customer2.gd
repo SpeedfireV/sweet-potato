@@ -22,20 +22,11 @@ enum State {
 }
 
 
+
 var current_state = State.LADA
 var rng = RandomNumberGenerator.new()
 func _ready():
 	rng.randomize()
 	go = rng.randi_range(1,20)
-	if go < 20:
+	if variables.queue == 0:
 		custom.play("Lada")
-
-
-
-
-
-
-
-
-	
-	
