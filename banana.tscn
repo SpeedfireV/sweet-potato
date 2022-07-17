@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://pictures/right_shoe.png" type="Texture" id=1]
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://banana.gd" type="Script" id=19]
 [ext_resource path="res://AreaCoconuts.gd" type="Script" id=20]
 [ext_resource path="res://AreaStrawberries.gd" type="Script" id=21]
+[ext_resource path="res://Npc.gd" type="Script" id=22]
 
 [sub_resource type="Animation" id=15]
 resource_name = "standing"
@@ -100,6 +101,68 @@ extents = Vector2( 15, 9.5 )
 [sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 8.5, 53.5 )
 
+[sub_resource type="Curve2D" id=24]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 35.6531, 389, 0, 0, 0, 0, 33.8163, 269, 0, 0, 0, 0, 33.2041, 259, 0, 0, 0, 0, 33.8163, 242, 0, 0, 0, 0, 30.7551, 232, 0, 0, 0, 0, 27.0816, 224, 0, 0, 0, 0, 25.2449, 217, 0, 0, 0, 0, 22.1837, 212, 0, 0, 0, 0, 19.7347, 208, 0, 0, 0, 0, 16.6735, 201, 0, 0, 0, 0, 13, 192 )
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "standing"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -10, 15 ), Vector2( -10, 12 ), Vector2( -10, 15 ) ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "walking"
+length = 1.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -10, 15 ), Vector2( -10, 12 ), Vector2( -10, 15 ), Vector2( -10, 12 ), Vector2( -10, 15 ), Vector2( -10, 12 ), Vector2( -10, 15 ), Vector2( -10, 12 ), Vector2( -10, 15 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../LeftShoe:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.8, 1, 1.2, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -11, 18 ), Vector2( -11, 15 ), Vector2( -11, 18 ), Vector2( -11, 18 ), Vector2( -11, 15 ), Vector2( -11, 18 ), Vector2( -11, 18 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../RightShoe:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 0.6, 0.8, 1.2, 1.4, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -12, 18 ), Vector2( -12, 18 ), Vector2( -12, 15 ), Vector2( -12, 18 ), Vector2( -12, 18 ), Vector2( -12, 15 ), Vector2( -12, 18 ) ]
+}
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 19 )
 
@@ -121,11 +184,6 @@ script = ExtResource( 2 )
 root_node = NodePath("../Body")
 anims/standing = SubResource( 15 )
 anims/walking = SubResource( 2 )
-
-[node name="Camera2D" type="Camera2D" parent="Node2D/YSort/Player"]
-position = Vector2( -12, 17 )
-current = true
-zoom = Vector2( 0.9, 0.9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/YSort/Player"]
 position = Vector2( -10.8099, 22.5 )
@@ -158,6 +216,9 @@ energy = 0.45
 shadow_enabled = true
 shadow_gradient_length = 20.0
 shadow_filter = 5
+
+[node name="Camera2D" type="Camera2D" parent="Node2D/YSort/Player"]
+current = true
 
 [node name="Table" type="Sprite" parent="Node2D/YSort"]
 position = Vector2( -32, 204.469 )
@@ -396,3 +457,42 @@ position = Vector2( 149.5, 104.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/StaticBody2D"]
 shape = SubResource( 23 )
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2( -8.23333, 0 )
+scale = Vector2( 1.63333, 1 )
+curve = SubResource( 24 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( 35.6531, 389 )
+rotation = -0.867429
+rotate = false
+loop = false
+
+[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D"]
+rotation = -0.867429
+script = ExtResource( 22 )
+
+[node name="Movement" type="AnimationPlayer" parent="Path2D/PathFollow2D/Area2D"]
+root_node = NodePath("../Body")
+anims/standing = SubResource( 25 )
+anims/walking = SubResource( 26 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Area2D"]
+position = Vector2( -10.8099, 22.5 )
+shape = SubResource( 1 )
+
+[node name="Body" type="Sprite" parent="Path2D/PathFollow2D/Area2D"]
+position = Vector2( -10, 15 )
+scale = Vector2( 0.0584795, 0.0584795 )
+texture = ExtResource( 4 )
+
+[node name="LeftShoe" type="Sprite" parent="Path2D/PathFollow2D/Area2D"]
+position = Vector2( -11, 18 )
+scale = Vector2( 0.0439453, 0.0439453 )
+texture = ExtResource( 3 )
+
+[node name="RightShoe" type="Sprite" parent="Path2D/PathFollow2D/Area2D"]
+position = Vector2( -12, 18 )
+scale = Vector2( 0.0444336, 0.0444336 )
+texture = ExtResource( 1 )
