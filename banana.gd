@@ -52,7 +52,8 @@ func _process(delta):
 			strawberries.active:
 				fruit.texture = load("res://pictures/fruits/strawberry.png")
 				fruit.visible = true
-				
+			sink.active:
+				fruit.visible = false
 		
 	
 
