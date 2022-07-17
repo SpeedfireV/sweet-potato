@@ -13,6 +13,11 @@ onready var custom = $AnimationPlayer
 enum State {
 	LADA,
 	STOLIK
+	STOLIK6
+	STOLIK2
+	STOLIK3
+	STOLIK4
+	STOLIK5
 }
 
 var current_state = State.LADA

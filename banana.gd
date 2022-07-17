@@ -10,6 +10,7 @@ onready var customer = $YSort/Areacustomer
 onready var blender1 = $YSort/Areablender1
 onready var blender2 = $YSort/Areablender2
 onready var fruit = $Node2D/YSort/Player/Fruit
+onready var sink = $YSort/AreaSink
 
 func _ready():
 	pass
@@ -33,7 +34,10 @@ func _process(delta):
 	elif blender2.active and (not notifier._visible or notifier.notifier_text.text != "blender2"):
 		notifier.set_notifier("Strawberries", "res://pictures/fruits/strawberry.png")
 		notifier.show_notifier()
-	elif not lemons.active and not coconuts.active and not strawberries.active and not customer.active and not blender1.active and not blender2.active:
+	elif sink.active and (not notifier._visible or notifier.notifier_text.text != "sink"):
+		notifier.set_notifier("Strawberries", "res://pictures/fruits/strawberry.png")
+		notifier.show_notifier()
+	elif not lemons.active and not coconuts.active and not strawberries.active and not customer.active and not blender1.active and not blender2.active and not sink.active:
 		notifier.hide_notifier()
 		
 	
