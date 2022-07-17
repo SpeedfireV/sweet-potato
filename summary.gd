@@ -28,10 +28,17 @@ func _ready():
 	
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if variables.hour == "18:00" and summary_control.visible == false:
+		summary_control.visible = true
 
 
 func _on_Button_pressed():
+	variables.hour = "10:00"
+	variables.clock_res = "res://pictures/clocks/clock10.png"
+	print("working")
+	
+	variables.day += 1
+	
 	summary_control.visible = false
+	

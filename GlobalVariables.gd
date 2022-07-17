@@ -1,7 +1,7 @@
 extends Node
 
 
-export var _money : int = 0
+export var _money : int = 50
 
 export var day: int = 1
 
@@ -16,6 +16,9 @@ export var mafia_money = {
 
 var number_of_customers: int = 0
 var queue: int = 0
+
+var hour: String = "10:00"
+var clock_res: String = "res://pictures/clocks/clock10.png"
 
 
 func _ready():
