@@ -119,7 +119,7 @@ visible = false
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -62.0
-margin_right = 62.0
+margin_right = 92.0
 margin_bottom = 19.0
 custom_styles/panel = SubResource( 1 )
 
