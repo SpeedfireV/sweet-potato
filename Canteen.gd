@@ -13,5 +13,5 @@ func _on_NPC_body_entered(body):
 		active = true
 	
 func _on_NPC_body_exited(body):
-	if body.name == "Player" and variables.queue == 0:
+	if body.name == "Player" and variables.queue == 1:
 		active = false
