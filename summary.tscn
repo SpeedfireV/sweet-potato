@@ -68,6 +68,7 @@ corner_radius_bottom_left = 5
 script = ExtResource( 2 )
 
 [node name="SummaryControl" type="Control" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 

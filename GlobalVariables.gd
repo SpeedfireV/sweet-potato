@@ -14,8 +14,10 @@ export var mafia_money = {
 	7: 140
 }
 
+var number_of_customers: int = 0
+var queue: int = 0
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	pass # Replace with function body.
 
