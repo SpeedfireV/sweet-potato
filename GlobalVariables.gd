@@ -22,6 +22,17 @@ var clock_res: String = "res://pictures/clocks/clock10.png"
 
 var current_fruit = "coconut"
 
+var current_drink = {"strawberry": 0, "lemon": 0, "coconut": 0}
+
+enum Types {
+	DRINK,
+	FRUIT,
+	NONE
+}
+
+var item_type = Types.NONE
+
+
 var blender_left = {
 	"strawberry": 0,
 	"coconut": 0,

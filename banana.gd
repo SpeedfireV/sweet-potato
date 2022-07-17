@@ -40,7 +40,7 @@ func _process(delta):
 			notifier.set_notifier("Take", "")
 		notifier.show_notifier()
 	elif blender2.active and (not notifier._visible or notifier.notifier_text.text != "blender2"):
-		if fruit.visible:
+		if fruit.visible and variables.item_type == variables.Types.FRUIT:
 			notifier.set_notifier("Put into blender", "")
 		else:
 			notifier.set_notifier("Take", "")
@@ -61,14 +61,17 @@ func _process(delta):
 			notifier.set_notifier("Wait", "") 
 		match true:
 			lemons.active:
+				variables.item_type == variables.Types.FRUIT
 				fruit.texture = load("res://pictures/fruits/lemon.png")
 				fruit.visible = true
 				variables.current_fruit = "lemon"
 			coconuts.active:
+				variables.item_type == variables.Types.FRUIT
 				fruit.texture = load("res://pictures/fruits/coconut.png")
 				fruit.visible = true
 				variables.current_fruit = "coconut"
 			strawberries.active:
+				variables.item_type == variables.Types.FRUIT
 				fruit.texture = load("res://pictures/fruits/strawberry.png")
 				fruit.visible = true
 				variables.current_fruit = "strawberry"
@@ -79,19 +82,27 @@ func _process(delta):
 				dialog.show_dialog()
 			blender1_possible:
 				if fruit.visible:
+					variables.item_type == variables.Types.NONE
 					fruit.visible = false
 					variables.blender_left[variables.current_fruit] += 1
 				else:
+					variables.item_type == variables.Types.DRINK
 					fruit.texture = load("res://drink.png")
 					fruit.visible = true
+					variables.current_drink = variables.blender_left
+					variables.blender_left = {"coconut": 0, "strawberry": 0, "lemon": 0}
 			blender2_possible:
 				if fruit.visible:
+					variables.item_type == variables.Types.NONE
 					fruit.visible = false
 					variables.blender_right[variables.current_fruit] += 1
 				else:
-					blender2_blend = true
+					variables.item_type == variables.Types.DRINK
+					fruit.texture = load("res://drink.png")
+					fruit.visible = true
+					variables.current_drink = variables.blender_right
+					variables.blender_right = {"coconut": 0, "strawberry": 0, "lemon": 0}
 		
-	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
