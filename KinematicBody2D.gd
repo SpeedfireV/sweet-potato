@@ -60,10 +60,15 @@ func _physics_process(delta: float) -> void:
 	_velocity.y = _vertical_direction * speed	
 	_velocity = move_and_slide(_velocity, UP_DIRECTION)
 	
+<<<<<<< HEAD
 	
 	if variables.dial == 1:
 		dialog.show_dialog()
 	
+=======
+	if variables.dial == 1:
+		dialog.show_dialog()
+>>>>>>> e748300879bde038f742bebfcc256c959547a7bd
 
 
 
