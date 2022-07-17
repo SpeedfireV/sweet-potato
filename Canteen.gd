@@ -9,9 +9,9 @@ func _ready():
 	
 
 func _on_NPC_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" :
 		active = true
 	
 func _on_NPC_body_exited(body):
-	if body.name == "Player":
+	if body.name == "Player" :
 		active = false

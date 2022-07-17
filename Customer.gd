@@ -19,7 +19,7 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	rng.randomize()
 	go = rng.randi_range(1,20)
-	if go < 5:
+	if go < 20:
 		custom.play("Lada")
 
 
