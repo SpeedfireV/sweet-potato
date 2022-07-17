@@ -13,6 +13,10 @@ onready var fruit = $Node2D/YSort/Player/Fruit
 onready var sink = $YSort/AreaSink
 onready var dialog = $Node2D/YSort/Player/Dialog
 
+var blender1_blend = false
+var blender2_blend = false
+
+
 func _ready():
 	pass
 	
@@ -32,18 +36,14 @@ func _process(delta):
 	elif blender1.active and (not notifier._visible or notifier.notifier_text.text != "blender1"):
 		if fruit.visible:
 			notifier.set_notifier("Put into blender", "")
-		elif variables.blender_left["coconut"] > 0 or variables.blender_left["strawberry"] > 0 or variables.blender_left["lemon"] > 0:
-			notifier.set_notifier("Blend", "") 
 		else:
-			notifier.set_notifier("", "")
+			notifier.set_notifier("Take", "")
 		notifier.show_notifier()
 	elif blender2.active and (not notifier._visible or notifier.notifier_text.text != "blender2"):
 		if fruit.visible:
 			notifier.set_notifier("Put into blender", "")
-		elif variables.blender_right["coconut"] > 0 or variables.blender_right["strawberry"] > 0 or variables.blender_right["lemon"] > 0:
-			notifier.set_notifier("Blend", "") 
 		else:
-			notifier.set_notifier("", "")
+			notifier.set_notifier("Take", "")
 		notifier.show_notifier()
 	elif sink.active and (not notifier._visible or notifier.notifier_text.text != "sink"):
 		notifier.set_notifier("Toss item", "")
@@ -51,10 +51,14 @@ func _process(delta):
 	elif not lemons.active and not coconuts.active and not strawberries.active and not customer.active and not blender1.active and not blender2.active and not sink.active:
 		notifier.hide_notifier()
 		
-	
+
+
 	if Input.is_action_just_pressed("ui_accept"):
-		var blender1_possible: bool = (blender1.active and fruit.visible == true)
-		var blender2_possible: bool = (blender2.active and fruit.visible == true)
+		var blender1_possible: bool = (blender1.active)
+		var blender2_possible: bool = (blender2.active)
+		
+		if blender1_blend:
+			notifier.set_notifier("Wait", "") 
 		match true:
 			lemons.active:
 				fruit.texture = load("res://pictures/fruits/lemon.png")
@@ -74,11 +78,18 @@ func _process(delta):
 				dialog.set_dialog_text("WORKING BU JA!!!!")
 				dialog.show_dialog()
 			blender1_possible:
-				fruit.visible = false
-				variables.blender_left[variables.current_fruit] += 1
+				if fruit.visible:
+					fruit.visible = false
+					variables.blender_left[variables.current_fruit] += 1
+				else:
+					fruit.texture = load("res://drink.png")
+					fruit.visible = true
 			blender2_possible:
-				fruit.visible = false
-				variables.blender_right[variables.current_fruit] += 1
+				if fruit.visible:
+					fruit.visible = false
+					variables.blender_right[variables.current_fruit] += 1
+				else:
+					blender2_blend = true
 		
 	
 
