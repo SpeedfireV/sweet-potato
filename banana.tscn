@@ -1286,3 +1286,5 @@ anims/Stolik3 = SubResource( 41 )
 anims/Stolik4 = SubResource( 42 )
 anims/Stolik5 = SubResource( 43 )
 anims/Stolik6 = SubResource( 44 )
+
+[connection signal="animation_finished" from="Customer/AnimationPlayer" to="Customer" method="_on_AnimationPlayer_animation_finished"]

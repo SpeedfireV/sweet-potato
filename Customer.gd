@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+onready var variables = $"/root/Global"
 
 export var speed := 90.0
 var go = 1.0
@@ -26,3 +27,9 @@ func _ready():
 
 
 
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	variables.queue += 1
+	print(variables.queue)
+	
