@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Label.gd" type="Script" id=2]
 [ext_resource path="res://coin.png" type="Texture" id=3]
 [ext_resource path="res://pictures/clocks/clock12.png" type="Texture" id=4]
 [ext_resource path="res://TimerLayer.gd" type="Script" id=5]
+[ext_resource path="res://pictures/fruits/coconut.png" type="Texture" id=6]
+[ext_resource path="res://FruitNotifier.gd" type="Script" id=7]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.745098, 0.333333, 0.0352941, 1 )
@@ -47,14 +49,13 @@ custom_styles/panel = SubResource( 1 )
 
 [node name="Money" type="Label" parent="MoneyLayer/Control"]
 margin_left = 20.0
-margin_top = -2.0
 margin_right = 53.0
-margin_bottom = 19.0
+margin_bottom = 21.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
 text = "200"
-valign = 1
+align = 1
 script = ExtResource( 2 )
 
 [node name="MoneyIcon" type="TextureRect" parent="MoneyLayer/Control"]
@@ -92,11 +93,54 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
 text = "12:00"
+align = 1
 
 [node name="ClockIcon" type="TextureRect" parent="TimerLayer/MarginContainer/ClockBackground"]
 margin_right = 512.0
 margin_bottom = 512.0
 rect_scale = Vector2( 0.038, 0.038 )
 texture = ExtResource( 4 )
+
+[node name="MoneyLayer2" type="CanvasLayer" parent="."]
+
+[node name="FruitNotifier" type="Control" parent="MoneyLayer2"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -27.0
+margin_top = 3.0
+margin_right = 27.0
+margin_bottom = 24.0
+script = ExtResource( 7 )
+
+[node name="NotifierBackground" type="Panel" parent="MoneyLayer2/FruitNotifier"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -62.0
+margin_right = 62.0
+margin_bottom = 19.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Notifier" type="Label" parent="MoneyLayer2/FruitNotifier"]
+visible = false
+margin_left = -14.0
+margin_top = -1.0
+margin_right = 86.0
+margin_bottom = 20.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Coconut"
+align = 1
+
+[node name="NotifierIcon" type="TextureRect" parent="MoneyLayer2/FruitNotifier"]
+visible = false
+margin_left = -36.0
+margin_top = -3.0
+margin_right = 476.0
+margin_bottom = 509.0
+rect_scale = Vector2( 0.05, 0.05 )
+size_flags_stretch_ratio = 0.17
+texture = ExtResource( 6 )
 
 [connection signal="timeout" from="TimerLayer/Timer" to="TimerLayer" method="TimerTimeout"]
