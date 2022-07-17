@@ -16,7 +16,7 @@ export var mafia_money = {
 
 var number_of_customers: int = 0
 var queue: int = 0
-
+var dial: int = 0
 var hour: String = "10:00"
 var clock_res: String = "res://pictures/clocks/clock10.png"
 
@@ -33,7 +33,11 @@ var blender_right = {
 	"coconut": 0,
 	"lemon": 0,
 }
-
+var list_dialog = [
+ {
+ 
+ }
+]
 
 func _ready():
 	pass # Replace with function body.

@@ -6,10 +6,12 @@ export var speed := 90.0
 
 var _velocity := Vector2.ZERO
 
+onready var variables = $"/root/Global"
 onready var body = $Body
 onready var left_shoe = $LeftShoe
 onready var right_shoe = $RightShoe
 onready var movement = $Movement
+onready var dialog = $Dialog
 
 enum State {
 	STANDING,
@@ -57,4 +59,9 @@ func _physics_process(delta: float) -> void:
 	_velocity.x = _horizontal_direction * speed
 	_velocity.y = _vertical_direction * speed	
 	_velocity = move_and_slide(_velocity, UP_DIRECTION)
+
+	
+	
+
+
 
