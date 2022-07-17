@@ -25,7 +25,5 @@ func TimerTimeout():
 		clock.text = (str(int(_text.substr(0, 2)) + 1) + ":00" )
 		if hour > 12:
 			clock_icon.texture = load(image % str(hour - 12))
-			
-			
-			
-							
+
+
