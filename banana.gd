@@ -11,6 +11,7 @@ onready var blender1 = $YSort/Areablender1
 onready var blender2 = $YSort/Areablender2
 onready var fruit = $Node2D/YSort/Player/Fruit
 onready var sink = $YSort/AreaSink
+onready var dialog = $Node2D/YSort/Player/Dialog
 
 func _ready():
 	pass
@@ -54,6 +55,10 @@ func _process(delta):
 				fruit.visible = true
 			sink.active:
 				fruit.visible = false
+			customer.active:
+				dialog.set_dialog_text("WORKING BU JA!!!!")
+				dialog.show_dialog()
+				print("Working")
 		
 	
 
