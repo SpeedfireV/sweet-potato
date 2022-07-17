@@ -6,6 +6,7 @@ onready var notifier = $"Node2D/YSort/Player/Hud/MoneyLayer2/FruitNotifier"
 onready var lemons = $YSort/AreaLemons
 onready var strawberries = $YSort/AreaStrawberries
 onready var coconuts = $YSort/AreaCoconuts
+onready var customer = $YSort/Areacustomer
 
 func _ready():
 	pass
@@ -20,7 +21,10 @@ func _process(delta):
 	elif strawberries.active and (not notifier._visible or notifier.notifier_text.text != "Strawberries"):
 		notifier.set_notifier("Strawberries", "res://pictures/fruits/strawberry.png")
 		notifier.show_notifier()
-	elif not lemons.active and not coconuts.active and not strawberries.active:
+	elif customer.active and (not notifier._visible or notifier.notifier_text.text != "customer"):
+		notifier.set_notifier("Strawberries", "res://pictures/fruits/strawberry.png")
+		notifier.show_notifier()
+	elif not lemons.active and not coconuts.active and not strawberries.active and not customer.active:
 		notifier.hide_notifier()
 		
 	
