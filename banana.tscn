@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://pictures/right_shoe.png" type="Texture" id=1]
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=2]
@@ -22,6 +22,9 @@
 [ext_resource path="res://AreaCoconuts.gd" type="Script" id=20]
 [ext_resource path="res://AreaStrawberries.gd" type="Script" id=21]
 [ext_resource path="res://Canteen.gd" type="Script" id=22]
+[ext_resource path="res://pictures/kitchen/kitchen_off.png" type="Texture" id=23]
+[ext_resource path="res://Areablender2.gd" type="Script" id=24]
+[ext_resource path="res://Areablender1.gd" type="Script" id=25]
 
 [sub_resource type="Animation" id=15]
 resource_name = "standing"
@@ -92,6 +95,9 @@ radius = 1.0
 [sub_resource type="RectangleShape2D" id=32]
 extents = Vector2( 16.5, 16.5 )
 
+[sub_resource type="RectangleShape2D" id=34]
+extents = Vector2( 59, 6.75 )
+
 [sub_resource type="OccluderPolygon2D" id=19]
 polygon = PoolVector2Array( 126, 224, 125, 224, 124, 225, 125, 225 )
 
@@ -106,6 +112,12 @@ extents = Vector2( 15, 9.5 )
 
 [sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 8.5, 53.5 )
+
+[sub_resource type="RectangleShape2D" id=35]
+extents = Vector2( 6, 15.5 )
+
+[sub_resource type="RectangleShape2D" id=36]
+extents = Vector2( 6, 15.5 )
 
 [sub_resource type="Animation" id=24]
 resource_name = "Lada"
@@ -851,6 +863,14 @@ scale = Vector2( 0.59375, 0.59375 )
 texture = ExtResource( 10 )
 offset = Vector2( 0, 27 )
 
+[node name="TextureRect" type="TextureRect" parent="Node2D/YSort"]
+margin_left = -67.0
+margin_top = 33.0
+margin_right = 81.0
+margin_bottom = 70.0
+texture = ExtResource( 23 )
+expand = true
+
 [node name="StaticBody2D" parent="Node2D" instance=ExtResource( 6 )]
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
@@ -885,6 +905,10 @@ shape = SubResource( 12 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
 position = Vector2( 48, 337 )
 shape = SubResource( 32 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2( 7, 54.25 )
+shape = SubResource( 34 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.835294, 0.831373, 0.713726, 0.792157 )
@@ -970,9 +994,23 @@ position = Vector2( 149.5, 104.5 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/StaticBody2D"]
 shape = SubResource( 23 )
 
+[node name="Areablender1" type="Area2D" parent="YSort"]
+script = ExtResource( 25 )
+
+[node name="ActiveBlender1" type="CollisionShape2D" parent="YSort/Areablender1"]
+position = Vector2( -31, 53.5 )
+shape = SubResource( 35 )
+
+[node name="Areablender2" type="Area2D" parent="YSort"]
+script = ExtResource( 24 )
+
+[node name="ActiveBlender2" type="CollisionShape2D" parent="YSort/Areablender2"]
+position = Vector2( 45, 54.5 )
+shape = SubResource( 36 )
+
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="KinematicBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
 position = Vector2( 50.1608, 411.471 )
 shape = SubResource( 1 )
 
