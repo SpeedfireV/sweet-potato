@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://pictures/right_shoe.png" type="Texture" id=1]
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://pictures/banana.png" type="Texture" id=4]
 [ext_resource path="res://banana.tres" type="TileSet" id=5]
 [ext_resource path="res://Wall.tscn" type="PackedScene" id=6]
+[ext_resource path="res://strawberries.png" type="Texture" id=7]
+[ext_resource path="res://coconuts.png" type="Texture" id=8]
+[ext_resource path="res://lemons.png" type="Texture" id=9]
 [ext_resource path="res://table.png" type="Texture" id=10]
 [ext_resource path="res://hud.tscn" type="PackedScene" id=11]
 [ext_resource path="res://dialog.tscn" type="PackedScene" id=12]
@@ -338,3 +341,18 @@ scale = Vector2( 0.1, 0.1 )
 tile_set = ExtResource( 5 )
 format = 1
 tile_data = PoolIntArray( 65521, 7, 0, 65526, 7, 0, 65531, 7, 0, 0, 7, 0, 5, 7, 0, 10, 7, 0, 15, 7, 0, 20, 7, 0, 25, 7, 0, 393201, 7, 0, 327705, 7, 0, 720881, 7, 0, 655385, 7, 0, 1048561, 7, 0, 983065, 7, 0, 1376241, 7, 0, 1310745, 7, 0, 1703921, 7, 0, 1703926, 7, 0, 1638420, 7, 0, 1638425, 7, 0, 2031601, 7, 0, 1966105, 7, 0, 2359281, 7, 0, 2293785, 7, 0, 2686961, 7, 0, 2621465, 7, 0, 3014641, 7, 0, 2949145, 7, 0, 3342321, 7, 0, 3342326, 7, 0, 3342331, 7, 0, 3276800, 7, 0, 3276810, 7, 0, 3276815, 7, 0, 3276820, 7, 0, 3276825, 7, 0 )
+
+[node name="Coconuts" type="Sprite" parent="TileMap2"]
+position = Vector2( 1510, 1430 )
+scale = Vector2( 0.402344, 0.402344 )
+texture = ExtResource( 8 )
+
+[node name="Strawberries" type="Sprite" parent="."]
+position = Vector2( 151, 106 )
+scale = Vector2( 0.039978, 0.039978 )
+texture = ExtResource( 7 )
+
+[node name="Lemons" type="Sprite" parent="."]
+position = Vector2( 151, 69 )
+scale = Vector2( 0.0401611, 0.0401611 )
+texture = ExtResource( 9 )
