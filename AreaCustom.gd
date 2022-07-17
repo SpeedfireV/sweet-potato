@@ -9,9 +9,11 @@ func _ready():
 	
 
 func _on_NPC_body_entered(body):
-	if body.name == "Player" and variables.queue == 1:
-		active = true
+	if body.name == "Customer":
+		variables.queue += 1
+	print(variables.queue)
 	
 func _on_NPC_body_exited(body):
-	if body.name == "Player" and variables.queue == 0:
-		active = false
+	if body.name == "Customer":
+		variables.queue += 0
+	print(variables.queue)

@@ -29,7 +29,6 @@ func _ready():
 
 
 
-func _on_AnimationPlayer_animation_finished(anim_name):
-	variables.queue += 1
-	print(variables.queue)
+
+	
 	
