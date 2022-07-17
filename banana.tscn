@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://pictures/right_shoe.png" type="Texture" id=1]
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=2]
@@ -27,7 +27,8 @@
 [ext_resource path="res://Areablender1.gd" type="Script" id=25]
 [ext_resource path="res://Customer.gd" type="Script" id=26]
 [ext_resource path="res://summary.tscn" type="PackedScene" id=27]
-[ext_resource path="res://AreaCustom.gd" type="Script" id=28]
+[ext_resource path="res://pictures/fruits/coconut.png" type="Texture" id=28]
+[ext_resource path="res://AreaCustom.gd" type="Script" id=29]
 
 [sub_resource type="Animation" id=15]
 resource_name = "standing"
@@ -966,6 +967,15 @@ position = Vector2( -11, 18 )
 scale = Vector2( 0.0439453, 0.0439453 )
 texture = ExtResource( 3 )
 
+[node name="Fruit" type="TextureRect" parent="Node2D/YSort/Player"]
+visible = false
+margin_left = -16.0
+margin_top = -5.0
+margin_right = 496.0
+margin_bottom = 507.0
+rect_scale = Vector2( 0.02, 0.02 )
+texture = ExtResource( 28 )
+
 [node name="RightShoe" type="Sprite" parent="Node2D/YSort/Player"]
 position = Vector2( -12, 18 )
 scale = Vector2( 0.0444336, 0.0444336 )
@@ -1260,7 +1270,7 @@ position = Vector2( 45, 54.5 )
 shape = SubResource( 36 )
 
 [node name="AreaCustom" type="Area2D" parent="YSort"]
-script = ExtResource( 28 )
+script = ExtResource( 29 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/AreaCustom"]
 position = Vector2( 17, 189 )
