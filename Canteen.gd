@@ -18,5 +18,5 @@ func _on_NPC_body_entered(body):
 	
 func _on_NPC_body_exited(body):
 	if body.name == "Player" and variables.queue == 1:
-		variables.dial = 1
+		variables.dial += 0
 		active = false
