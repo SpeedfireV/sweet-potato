@@ -26,6 +26,7 @@ enum State {
 var current_state = State.LADA
 var rng = RandomNumberGenerator.new()
 func _ready():
+	yield(get_tree().create_timer(7.0), "timeout")
 	rng.randomize()
 	go = rng.randi_range(1,20)
 	if variables.queue == 0:
