@@ -20,6 +20,8 @@ var queue: int = 0
 var hour: String = "10:00"
 var clock_res: String = "res://pictures/clocks/clock10.png"
 
+var current_fruit = "coconut"
+
 var blender_left = {
 	"strawberry": 0,
 	"coconut": 0,

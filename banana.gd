@@ -1,7 +1,7 @@
 extends Node2D
 
 
-
+onready var variables = $"/root/Global"
 onready var notifier = $"Node2D/YSort/Player/Hud/MoneyLayer2/FruitNotifier"
 onready var lemons = $YSort/AreaLemons
 onready var strawberries = $YSort/AreaStrawberries
@@ -30,10 +30,20 @@ func _process(delta):
 		notifier.set_notifier("Take order", "")
 		notifier.show_notifier()
 	elif blender1.active and (not notifier._visible or notifier.notifier_text.text != "blender1"):
-		notifier.set_notifier("Put into blender", "")
+		if fruit.visible:
+			notifier.set_notifier("Put into blender", "")
+		elif variables.blender_left["coconut"] > 0 or variables.blender_left["strawberry"] > 0 or variables.blender_left["lemon"] > 0:
+			notifier.set_notifier("Blend", "") 
+		else:
+			notifier.set_notifier("", "")
 		notifier.show_notifier()
 	elif blender2.active and (not notifier._visible or notifier.notifier_text.text != "blender2"):
-		notifier.set_notifier("Put into blender", "")
+		if fruit.visible:
+			notifier.set_notifier("Put into blender", "")
+		elif variables.blender_right["coconut"] > 0 or variables.blender_right["strawberry"] > 0 or variables.blender_right["lemon"] > 0:
+			notifier.set_notifier("Blend", "") 
+		else:
+			notifier.set_notifier("", "")
 		notifier.show_notifier()
 	elif sink.active and (not notifier._visible or notifier.notifier_text.text != "sink"):
 		notifier.set_notifier("Toss item", "")
@@ -43,22 +53,32 @@ func _process(delta):
 		
 	
 	if Input.is_action_just_pressed("ui_accept"):
+		var blender1_possible: bool = (blender1.active and fruit.visible == true)
+		var blender2_possible: bool = (blender2.active and fruit.visible == true)
 		match true:
 			lemons.active:
 				fruit.texture = load("res://pictures/fruits/lemon.png")
 				fruit.visible = true
+				variables.current_fruit = "lemon"
 			coconuts.active:
 				fruit.texture = load("res://pictures/fruits/coconut.png")
 				fruit.visible = true
+				variables.current_fruit = "coconut"
 			strawberries.active:
 				fruit.texture = load("res://pictures/fruits/strawberry.png")
 				fruit.visible = true
+				variables.current_fruit = "strawberry"
 			sink.active:
 				fruit.visible = false
 			customer.active:
 				dialog.set_dialog_text("WORKING BU JA!!!!")
 				dialog.show_dialog()
-				print("Working")
+			blender1_possible:
+				fruit.visible = false
+				variables.blender_left[variables.current_fruit] += 1
+			blender2_possible:
+				fruit.visible = false
+				variables.blender_right[variables.current_fruit] += 1
 		
 	
 
