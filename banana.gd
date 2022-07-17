@@ -28,10 +28,10 @@ func _process(delta):
 		notifier.set_notifier("Strawberries", "res://pictures/fruits/strawberry.png")
 		notifier.show_notifier()
 	elif blender1.active and (not notifier._visible or notifier.notifier_text.text != "blender1"):
-		notifier.set_notifier("Strawberries", "res://pictures/fruits/strawberry.png")
+		notifier.set_notifier("Put into blender", "")
 		notifier.show_notifier()
 	elif blender2.active and (not notifier._visible or notifier.notifier_text.text != "blender2"):
-		notifier.set_notifier("Strawberries", "res://pictures/fruits/strawberry.png")
+		notifier.set_notifier("Put into blender", "")
 		notifier.show_notifier()
 	elif not lemons.active and not coconuts.active and not strawberries.active and not customer.active and not blender1.active and not blender2.active:
 		notifier.hide_notifier()
