@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 const UP_DIRECTION = Vector2.UP
 
-export var speed := 100.0
+export var speed := 85.0
 
 var _velocity := Vector2.ZERO
 
@@ -10,6 +10,16 @@ onready var body = $Body
 onready var left_shoe = $LeftShoe
 onready var right_shoe = $RightShoe
 onready var movement = $Movement
+
+enum State {
+	STANDING,
+	WALKING
+}
+
+var current_state = State.STANDING
+
+func _ready():
+	movement.play("standing")
 
 func _physics_process(delta: float) -> void:
 	var _horizontal_direction = (
@@ -21,18 +31,24 @@ func _physics_process(delta: float) -> void:
 		Input.get_action_strength("move_up")
 	)
 	if _velocity.x != 0 or _velocity.y != 0:
-		movement.play("movement")
-
+		if current_state != State.WALKING:
+			movement.stop()
+			movement.play("walking")
+			current_state = State.WALKING
 	else:
-		movement.stop()
-		movement.play()
-		movement.stop()
-		movement.play()
+		if current_state != State.STANDING:
+			movement.stop()
+			left_shoe.position.y = 18.0
+			left_shoe.position.x = -11.0
+			right_shoe.position.y = 18.0
+			right_shoe.position.x = -12
+			movement.play("standing")
+
+			current_state = State.STANDING
 	if _velocity.x > 0:
 		body.flip_h = true
 		left_shoe.flip_h = true
 		right_shoe.flip_h = true	
-		movement.play("movement")
 	elif _velocity.x < 0:
 		body.flip_h = false
 		left_shoe.flip_h = false

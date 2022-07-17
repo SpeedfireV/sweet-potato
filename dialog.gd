@@ -18,7 +18,6 @@ func _ready():
 	dialog.text = "Lorem Ipsum"
 	dialog.percent_visible = 1
 	arrow.visible = true
-	print("Działa")
 	current_state = State.READING
 
 func _process(delta):
@@ -30,8 +29,7 @@ func _process(delta):
 		show_dialog()
 	elif current_state == State.READING and dialog.percent_visible == 1.0:
 		current_state = State.FINISHED
-	print(current_state)
-
+		
 func set_dialog_text(_text):
 	dialog.text = _text
 
