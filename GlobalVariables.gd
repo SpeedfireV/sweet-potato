@@ -3,6 +3,17 @@ extends Node
 
 export var _money : int = 0
 
+export var day: int = 1
+
+export var mafia_money = {
+	2: 50,
+	3: 70,
+	4: 80,
+	5: 110,
+	6: 100,
+	7: 140
+}
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
