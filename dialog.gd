@@ -2,7 +2,7 @@ extends CanvasLayer
 
 const CHAR_READ_RATE = 0.07
 
-
+onready var variables = $"/root/Global"
 onready var background = $MarginContainer/Background
 onready var dialog = $MarginContainer/Background/Dialog
 onready var arrow = $MarginContainer/Background/Arrow
@@ -56,4 +56,5 @@ func change_state():
 			current_state = State.FINISHED
 		State.FINISHED:
 			current_state = State.READY
+
 

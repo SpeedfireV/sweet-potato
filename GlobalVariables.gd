@@ -35,8 +35,29 @@ var blender_right = {
 }
 var list_dialog = [
  {
- 
- }
+ "dialog": "I want strawberry shake",
+ "order" : {"strawberry":2,"coconut": 0, "lemon": 0} 
+ },
+{
+ "dialog": "I want coconut drink",
+ "order" : {"strawberry":0,"coconut": 2, "lemon": 0}
+ },
+{
+ "dialog": "I want lemon juice",
+ "order" : {"strawberry":0,"coconut": 0,"lemon": 2}
+ },
+{
+ "dialog": "I want strawberry",
+ "order" : {"strawberry":1,"coconut": 0, "lemon": 0} 
+ },
+{
+ "dialog": "I want coconut",
+ "order" : {"strawberry":0,"coconut": 1, "lemon": 0}
+ },
+{
+ "dialog": "I want lemon",
+ "order" : {"strawberry":0,"coconut": 0,"lemon": 1}
+ },
 ]
 
 func _ready():
