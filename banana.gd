@@ -1,5 +1,8 @@
 extends Node2D
 
+var array = [1,2,3]
+
+var item = array[randi() % array.size()]
 
 onready var variables = $"/root/Global"
 onready var notifier = $"Node2D/YSort/Player/Hud/MoneyLayer2/FruitNotifier"
@@ -78,8 +81,11 @@ func _process(delta):
 			sink.active:
 				fruit.visible = false
 			customer.active:
-				dialog.set_dialog_text("WORKING BU JA!!!!")
+				
+				dialog.set_dialog_text("I want strawberry")
 				dialog.show_dialog()
+				
+				
 			blender1_possible:
 				if fruit.visible:
 					variables.item_type == variables.Types.NONE

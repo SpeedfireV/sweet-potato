@@ -62,8 +62,6 @@ func _physics_process(delta: float) -> void:
 	
 	
 	
-	if variables.dial == 1:
-		dialog.show_dialog()
 
 
 

@@ -30,3 +30,6 @@ func _ready():
 	go = rng.randi_range(1,20)
 	if go < 20:
 		custom.play("Lada")
+
+
+
